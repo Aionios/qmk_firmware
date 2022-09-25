@@ -63,7 +63,15 @@ static bool basic_solid_effect(effect_params_t* params) {
   for (int i = 18; i < 31; ++i) {
     rgb_matrix_set_color(i, RGB_CP_WISTERIA);   // num, -, =
   }
-  for (int i = 31; i < 99; ++i) {
+  for (int i = 31; i < 88; ++i) {
+    rgb_matrix_set_color(i, BASIC_EFFECT_COLOR);
+  }
+  rgb_matrix_set_color(88, RGB_CP_PALESILVER);  // Win
+  rgb_matrix_set_color(89, BASIC_EFFECT_COLOR);
+  rgb_matrix_set_color(90, BASIC_EFFECT_COLOR);
+  rgb_matrix_set_color(91, BASIC_EFFECT_COLOR);
+  rgb_matrix_set_color(92, RGB_CP_PALESILVER);  // Fn
+  for (int i = 93; i < 99; ++i) {
     rgb_matrix_set_color(i, BASIC_EFFECT_COLOR);
   }
   gradient_side_bar();
@@ -72,8 +80,10 @@ static bool basic_solid_effect(effect_params_t* params) {
 
 static bool basic_dark_effect(effect_params_t* params) {
   RGB_MATRIX_USE_LIMITS(led_min, led_max);
-  rgb_matrix_set_color_all(RGB_BLACK);         // set all to azure
-  rgb_matrix_set_color(14, RGB_CP_BLOODRED);   // Set Del to dark red
+  rgb_matrix_set_color_all(RGB_BLACK);           // set all to azure
+  rgb_matrix_set_color(14, RGB_CP_BLOODRED);     // Set Del to dark red
+  rgb_matrix_set_color(88, RGB_CP_RICHLEMON);     // Win
+  rgb_matrix_set_color(92, RGB_CP_RICHLEMON);     // Fn
   return rgb_matrix_check_finished_leds(led_max);
 }
 
@@ -89,6 +99,7 @@ static bool mouse_layer_effect(effect_params_t* params) {
   rgb_matrix_set_color(70, RGB_CP_STEELPINK);  // SHIFT_L
   rgb_matrix_set_color(87, RGB_CP_STEELPINK);  // CTRL_L
   rgb_matrix_set_color(90, RGB_CP_STEELPINK);  // SPACE
+  rgb_matrix_set_color(93, RGB_CP_ELECTRICBLUE); // CTRL_R (Toggle moouse mode)
   return rgb_matrix_check_finished_leds(led_max);
 }
 
